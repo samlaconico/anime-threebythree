@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 type InfoType = {
   title: string;
@@ -49,12 +50,10 @@ function Info({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      <div
-        className={`${open ? "my-3 h-48 w-full" : "h-0 w-0 overflow-hidden"} m-auto bg-neutral-300 transition-all`}
-      >
-        {children}
-      </div>
+    <div
+      className={`${open ? "my-3 h-48 w-full" : "h-0 w-0 overflow-hidden"} m-auto bg-neutral-300 transition-all`}
+    >
+      {children}
     </div>
   );
 }
@@ -69,14 +68,15 @@ function GridItem({
   body: string;
 }) {
   return (
-    <div className="">
-      <div
-        className={`m-auto size-48 bg-blue-400 transition-all`}
-        onClick={() => {
-          callback({ title: title, body: body });
-        }}
-      ></div>
-    </div>
+    <motion.div
+      className={`m-auto size-48 bg-blue-400 transition-all`}
+      onClick={() => {
+        callback({ title: title, body: body });
+      }}
+      whileHover={{ scale: 1.1 }}      
+      transition={{duration: .02}}
+      onHoverStart={() => console.log("hover started!")}
+    ></motion.div>
   );
 }
 
