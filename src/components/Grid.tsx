@@ -27,7 +27,7 @@ function Row({ data }: { data: animeInfo[] }) {
 
   const open = (i: InfoType, index: number) => {
     if (!infoOpen.open) {
-      setInfoOpen((prev) => ({ current: index, open: true }));
+      setInfoOpen(() => ({ current: index, open: true }));
       setInfo(i);
     } else {
       if (infoOpen.current != index) {
