@@ -23,7 +23,6 @@ export function Grid() {
 function Row({ data }: { data: animeInfo[] }) {
   const [infoOpen, setInfoOpen] = useState({ current: 0, open: false });
   const [info, setInfo] = useState<InfoType>();
-  console.log(infoOpen);
 
   const open = (i: InfoType, index: number) => {
     if (!infoOpen.open) {
@@ -120,7 +119,7 @@ function GridItem({
       onClick={() => {
         callback({ title: title, body: body }, index);
       }}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.02 }}
       onHoverStart={() => console.log("hover started!")}
     >

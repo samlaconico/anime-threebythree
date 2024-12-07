@@ -14,3 +14,8 @@ export type animeInfo = {
   };
   synopsis: string;
 };
+
+export type credential = {
+  email: string;
+  password: string;
+};
